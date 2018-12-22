@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namesapce std;
+
+void print(int a[], int n)
+{
+  for (int i=0; i<n; i++)
+    count<<a[i]<<" ";
+  count<<endl;
+}
+
+void quick_sort(int s[], int l, int r)
+{
+  if(l<r)
+  {
+    int i=l, j=r, x=s[l];
+    
+    while(i<j)
+    {
+      // 从右至左寻找
+      while(i<j&&s[j]>=x)
+        j--;
+      if(i<j)
+      {
+        s[i]=s[j];
+        i++;        //s[i++]=s[j]
+      }
+      // 从左至右寻找
+      while(i<j && s[i]<x）
+        i++;
+      if (i<j)
+      {
+        s[j]=s[i];
+        j--;         //s[j--]=s[i]
+      }
+    }
+    s[i] = x;
+    quick_sort(s, l, i-1);
+    quick_sort(s, i+1, r);
+  }
+}
+
+int main()
+{
+  int a[]=[2,5,8,3,6,9,1,4,7,10];
+  print(a,10);
+  quick_sort(a,0,9)
+  print(a,10);
+  return 0;
+}
+
