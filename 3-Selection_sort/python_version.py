@@ -1,3 +1,6 @@
+#  选择排序算法
+#  时间复杂度： O(n²)
+#  表现稳定
 
 a = [2, 3, 1, 4, 5]
 temp = 0
@@ -19,6 +22,3 @@ for i in range(len(a)):
         a[minindex] = a[i]
         a[i] = temp
 print (a)                      # [1,2,3,4,5]
-
-
-
